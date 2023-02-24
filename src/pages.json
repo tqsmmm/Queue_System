@@ -1,0 +1,65 @@
+{
+    "pages": [
+        //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        {
+            "path": "pages/index/index",
+            "style": {
+                "navigationBarTitleText": "排队叫号系统"
+            }
+        },
+        {
+            "path": "pages/appoint/index",
+            "style": {
+                "navigationBarTitleText": "预约"
+            }
+        },
+        {
+            "path": "pages/call/index",
+            "style": {
+                "navigationBarTitleText": "叫号"
+            }
+        },
+        {
+            "path": "pages/finish/index",
+            "style": {
+                "navigationBarTitleText": "完成"
+            }
+        },
+        {
+            "path": "pages/login/index",
+            "style": {
+                "navigationBarTitleText": "登录"
+            }
+        },
+        {
+            "path": "pages/offer/index",
+            "style": {
+                "navigationBarTitleText": "取号"
+            }
+        },
+        {
+            "path": "pages/profile/index",
+            "style": {
+                "navigationBarTitleText": "个人中心"
+            }
+        },
+        {
+            "path": "pages/reg/index",
+            "style": {
+                "navigationBarTitleText": "注册"
+            }
+        },
+        {
+            "path": "pages/wait/index",
+            "style": {
+                "navigationBarTitleText": "等待"
+            }
+        }
+    ],
+    "globalStyle": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni-app",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    }
+}
