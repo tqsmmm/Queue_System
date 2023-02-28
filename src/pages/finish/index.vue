@@ -1,7 +1,7 @@
 <template>
-    <view>服务已经结束</view>
-    <view>
-        <textarea placeholder="请对我们的服务做出评价"></textarea>
+    <view class="container">
+        <view class="view">服务已经结束</view>
+        <textarea class="textarea" placeholder="请对我们的服务做出评价"></textarea>
     </view>
 </template>
 
@@ -10,5 +10,18 @@
 <style scoped>
 * {
     outline: red 1px solid;
+    overflow: hidden;
+}
+
+.container {
+    padding: 10rpx;
+}
+
+.view {
+    margin: 10rpx;
+}
+
+.textarea {
+    margin: 10rpx;
 }
 </style>

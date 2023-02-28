@@ -1,26 +1,23 @@
 <template>
-    <view class="content">
-        <image class="logo" src="/static/logo.png" />
-        <view class="text-area">
-            <text class="title">{{ title }}</text>
+    <view class="container">
+        <view class="content">
+            <image class="logo" src="/static/logo.png" />
         </view>
-    </view>
-    <view>
-        <button @click="login">登录</button>
-        <button @click="reg">注册</button>
-        <button @click="appoint">预约</button>
-        <button @click="call">叫号</button>
-        <button @click="finish">结束</button>
-        <button @click="offer">取号</button>
-        <button @click="wait">等待</button>
-        <button @click="profile">个人信息</button>
+
+        <view class="bottom">
+            <button class="button" type="primary" @click="appoint">预约</button>
+            <button class="button" type="primary" @click="offer">取号</button>
+            <view class="profile">
+                <button class="button" size="mini" @click="login">登录</button>
+                <button class="button" size="mini" @click="reg">注册</button>
+                <button class="button" size="mini" @click="profile">个人信息</button>
+            </view>
+        </view>
     </view>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-
-const title = ref('排队叫号系统');
 
 const login = () => {
     uni.navigateTo({
@@ -40,18 +37,6 @@ const appoint = () => {
     });
 };
 
-const call = () => {
-    uni.navigateTo({
-        url: '/pages/call/index',
-    });
-};
-
-const finish = () => {
-    uni.navigateTo({
-        url: '/pages/finish/index',
-    });
-};
-
 const offer = () => {
     uni.navigateTo({
         url: '/pages/offer/index',
@@ -63,18 +48,18 @@ const profile = () => {
         url: '/pages/profile/index',
     });
 };
-
-const wait = () => {
-    uni.navigateTo({
-        url: '/pages/wait/index',
-    });
-};
 </script>
 
 <style>
 * {
     outline: red 1px solid;
+    overflow: hidden;
 }
+
+.container {
+    padding: 10rpx;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -85,19 +70,27 @@ const wait = () => {
 .logo {
     height: 200rpx;
     width: 200rpx;
-    margin-top: 200rpx;
+    margin-top: 50rpx;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50rpx;
 }
 
-.text-area {
+.profile {
+    margin: 10rpx;
+
     display: flex;
     justify-content: center;
 }
 
-.title {
-    font-size: 36rpx;
-    color: #8f8f94;
+.button {
+    margin: 10rpx;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 10rpx;
+
+    width: 730rpx;
 }
 </style>
