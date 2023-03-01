@@ -1,10 +1,10 @@
 <template>
     <view class="container">
-        <view class="content">
+        <view class="header">
             <image class="logo" src="/static/logo.png" />
         </view>
-
-        <view class="bottom">
+        <view class="content"></view>
+        <view class="footer">
             <button class="button" type="primary" @click="appoint">预约</button>
             <button class="button" type="primary" @click="offer">取号</button>
             <view class="profile">
@@ -58,9 +58,13 @@ const profile = () => {
 
 .container {
     padding: 10rpx;
+
+    height: 100vh;
+
+    background-color: #f0f0f0;
 }
 
-.content {
+.header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,7 +91,7 @@ const profile = () => {
     margin: 10rpx;
 }
 
-.bottom {
+.footer {
     position: absolute;
     bottom: 10rpx;
 
