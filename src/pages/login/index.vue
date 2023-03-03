@@ -2,9 +2,9 @@
     <view class="container">
         <view class="form">
             <view class="view">用户名：</view>
-            <input class="input" placeholder="请输入您的用户名" v-model="userId" />
+            <input class="input" placeholder="请输入您的用户名" v-model="form.user_id" />
             <view class="view">密码：</view>
-            <input class="input" placeholder="请输入您的密码" v-model="pass" password />
+            <input class="input" placeholder="请输入您的密码" v-model="form.user_pwd" password />
         </view>
 
         <view class="footer">
@@ -14,20 +14,33 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { reactive } from 'vue';
+import { apiLogin } from '@/api/apiSystem';
 
-const userId = ref('');
-
-const pass = ref('');
+const form = reactive({
+    user_id: '',
+    user_pwd: '',
+});
 
 const login = () => {
-    console.log('login');
+    apiLogin(form).then(res => {
+        if (res.code == 200) {
+            uni.navigateTo({
+                url: '/pages/index/index',
+            });
+        } else {
+            uni.showToast({
+                title: res.message,
+                icon: 'error',
+            });
+        }
+    });
 };
 </script>
 
 <style scoped>
 * {
-    outline: red 1px solid;
+    /* outline: red 1px solid; */
     overflow: hidden;
 }
 

@@ -15,7 +15,7 @@ const number = ref('');
 
 <style scoped>
 * {
-    outline: red 1px solid;
+    /* outline: red 1px solid; */
     overflow: hidden;
 }
 

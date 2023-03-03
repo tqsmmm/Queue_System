@@ -8,9 +8,9 @@
             <button class="button" type="primary" @click="appoint">预约</button>
             <button class="button" type="primary" @click="offer">取号</button>
             <view class="profile">
-                <button class="button" size="mini" @click="login">登录</button>
-                <button class="button" size="mini" @click="reg">注册</button>
-                <button class="button" size="mini" @click="profile">个人信息</button>
+                <button v-if="shown" class="button" size="mini" @click="login">登录</button>
+                <button v-if="shown" class="button" size="mini" @click="reg">注册</button>
+                <button v-if="!shown" class="button" size="mini" @click="profile">个人信息</button>
             </view>
         </view>
     </view>
@@ -18,6 +18,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+
+const shown = ref(true);
 
 const login = () => {
     uni.navigateTo({
@@ -52,7 +54,7 @@ const profile = () => {
 
 <style>
 * {
-    outline: red 1px solid;
+    /* outline: red 1px solid; */
     overflow: hidden;
 }
 
